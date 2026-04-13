@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Booking Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div id="formWrapper">
+            <header>
+                <h1>Event Booking</h1>
+                <p>Reserve your tickets in seconds.</p>
+            </header>
+
+            <form id="bookingForm" novalidate>
+                <div class="input-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="Enter your name" required>
+                    <small class="error-msg">Name is required</small>
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="email@example.com" required>
+                    <small class="error-msg">Enter a valid email</small>
+                </div>
+
+                <div class="input-group">
+                    <label for="ticketCount">Tickets ($50 each)</label>
+                    <input type="number" id="ticketCount" name="ticketCount" min="1" max="10" value="1" required>
+                </div>
+
+                <div class="price-summary">
+                    Total Price: <span id="totalPrice">$50</span>
+                </div>
+
+                <button type="submit" id="submitBtn">Book Now</button>
+            </form>
+        </div>
+
+        <div id="successMessage" class="hidden">
+            <div class="success-card">
+                <h2>Success! 🎉</h2>
+                <p id="confirmationDetails"></p>
+                <button onclick="window.location.reload()">Book Another Event</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
